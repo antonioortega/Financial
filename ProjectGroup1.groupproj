@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{6FC2CE2E-60A8-4885-B7E8-48C5010BA24D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Financeiro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PTB\Financeiro_PTB.bdsproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Financeiro">
+        <MSBuild Projects="Financeiro.dproj"/>
+    </Target>
+    <Target Name="Financeiro:Clean">
+        <MSBuild Projects="Financeiro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Financeiro:Make">
+        <MSBuild Projects="Financeiro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Financeiro_PTB">
+        <MSBuild Projects="PTB\Financeiro_PTB.bdsproj"/>
+    </Target>
+    <Target Name="Financeiro_PTB:Clean">
+        <MSBuild Projects="PTB\Financeiro_PTB.bdsproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Financeiro_PTB:Make">
+        <MSBuild Projects="PTB\Financeiro_PTB.bdsproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Financeiro;Financeiro_PTB"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Financeiro:Clean;Financeiro_PTB:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Financeiro:Make;Financeiro_PTB:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
