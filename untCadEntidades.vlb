@@ -56,9 +56,6 @@ Coordinates=540,90,141,645
 [DataModule1.tbUSUARIO]
 Coordinates=10,1068,138,177
 
-[PageControl1]
-Coordinates=237,1358,81,33
-
 [tabFisica]
 Coordinates=161,1358,58,33
 
@@ -194,4 +191,7 @@ Coordinates=1674,1290,60,33
 
 [DBNav]
 Coordinates=169,881,82,51
+
+[tabsFormulario]
+Coordinates=237,1358,81,33
 

@@ -15,19 +15,17 @@ object DataModule1: TDataModule1
   end
   object Connection: TFDConnection
     Params.Strings = (
+      'LockingMode=Normal'
+      'StringFormat=Unicode'
       
         'Database=D:\Antonio\Projetos\Financeiro\Vers'#227'o 2\Win32\Debug\Dad' +
         'os\dbfinanceiro.sdb'
-      'LockingMode=Normal'
-      'StringFormat=Unicode'
       'DriverID=Financeiro')
-    Connected = True
     LoginPrompt = False
     Left = 328
     Top = 16
   end
   object tbUSUARIO: TFDTable
-    Active = True
     AfterInsert = tbUSUARIOAfterInsert
     BeforePost = tbUSUARIOBeforePost
     IndexFieldNames = 'CODIGO'
@@ -91,7 +89,6 @@ object DataModule1: TDataModule1
     Top = 16
   end
   object tbEMPRESA: TFDTable
-    Active = True
     IndexFieldNames = 'EMPNUME'
     Connection = Connection
     UpdateOptions.UpdateTableName = 'EMPRESAS'
@@ -303,7 +300,6 @@ object DataModule1: TDataModule1
     end
   end
   object tbCONTAS: TFDTable
-    Active = True
     IndexFieldNames = 'PLACOD'
     Connection = Connection
     UpdateOptions.UpdateTableName = 'CONTA'
@@ -1375,7 +1371,6 @@ object DataModule1: TDataModule1
     end
   end
   object tbEntidades: TFDTable
-    Active = True
     IndexFieldNames = 'RAZSOC'
     Connection = Connection
     UpdateOptions.UpdateTableName = 'ENTIDADE'

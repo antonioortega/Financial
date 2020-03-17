@@ -45,6 +45,7 @@ type
     ProgFin32: TImageList;
     actCadEntidades: TAction;
     BitBtn3: TBitBtn;
+    Relatorios1: TMenuItem;
     procedure cadEmpresaExecute(Sender: TObject);
     procedure cadUsuariosExecute(Sender: TObject);
     procedure cadPlanoContasExecute(Sender: TObject);
@@ -55,6 +56,7 @@ type
     procedure actCodigoContabilExecute(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure actCadEntidadesExecute(Sender: TObject);
+    procedure ApplicationEventsException(Sender: TObject; E: Exception);
   private
     { Private declarations }
   public
@@ -155,6 +157,27 @@ begin
          end;
       end;
     end;
+end;
+
+procedure TfrmMain.ApplicationEventsException(Sender: TObject; E: Exception);
+var
+  sCaminhoLogErros: string;
+  ArquivoLog: TextFile;
+begin
+  sCaminhoLogErros := ExtractFilePath(Application.ExeName) +  'LogErros.txt';
+  AssignFile(ArquivoLog, sCaminhoLogErros);
+
+  // se o arquivo já existir, será aberto para modificação
+  // caso contrário, o arquivo será criado
+  if FileExists(sCaminhoLogErros) then
+    Append(ArquivoLog)
+  else
+    Rewrite(ArquivoLog);
+  WriteLn(ArquivoLog, 'Data: ' + DateTimeToStr(Now)); // escreve a data e hora
+  WriteLn(ArquivoLog, 'Usuário: ' + StatusBar.Panels[1].Text);
+  WriteLn(ArquivoLog, 'Mensagem: ' + e.Message); // escreve a mensagem
+  WriteLn(ArquivoLog, EmptyStr); // pula uma linha
+  CloseFile(ArquivoLog);
 end;
 
 procedure TfrmMain.cadEmpresaExecute(Sender: TObject);

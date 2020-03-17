@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics, System.UITypes,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,
-  Vcl.Buttons, Data.DB, Vcl.ExtCtrls, Vcl.Imaging.jpeg, Vcl.Imaging.pngimage;
+  Vcl.Buttons, Data.DB, Vcl.ExtCtrls, Vcl.Imaging.jpeg,
+  Vcl.Imaging.pngimage;
 
 type
   TfrmLogin = class(TForm)
@@ -21,6 +22,7 @@ type
     Label2: TLabel;
     procedure btnEntrarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,6 +40,15 @@ implementation
 {$R *.dfm}
 
 uses untDados, untMain;
+
+procedure TfrmLogin.FormCreate(Sender: TObject);
+begin
+  DataModule1.Connection.Close;
+  DataModule1.Connection.Params.Database := ExtractFilePath(Application.Exename) + 'Dados\dbfinanceiro.sdb';
+  DataModule1.Connection.Open;
+  DataModule1.tbEMPRESA.Open;
+  DataModule1.tbCONTAS.Open;
+end;
 
 procedure TfrmLogin.FormShow(Sender: TObject);
 begin

@@ -220,7 +220,7 @@ begin
   with qryLancamentos do
   begin
     SQL.Clear;
-    SQL.Add('INSERT INTO MOVBAN (NUMERO, CODBAN, DTMOV, DOC, DTDOC, HISTORICO, VALOR, SALDO, OPE, CTA, CODGRU, CCT, CONFE)');
+    SQL.Add('INSERT INTO MOVBAN (NUMERO, CODBAN, DTMOV, DOC, DTDOC, HISTORICO, VALOR, SALDO, OPE, CTA, FLAG, CODGRU, CCT, CONFE)');
     SQL.Add('VALUES ( :numero ' +
                    ', :banco ' +
                    ', :DataMov '+
@@ -231,6 +231,7 @@ begin
                    ', :Saldo' +
                    ', :Ope ' +
                    ', :CTA ' +
+                   ', :FLAG ' +
                    ', :Gru ' +
                    ', :CCT ' +
                    ', :CONFE );');
@@ -244,6 +245,7 @@ begin
     ParamByName('Saldo').AsFloat := Saldo;
     ParamByName('Ope').AsString := Ope;
     ParamByName('CTA').AsString := edtCTACOD.Text;
+    ParamByName('FLAG').AsString := 'L';
     ParamByName('Gru').AsString := edtCodGruDoc.Text;
     ParamByName('CCT').AsString := edtCCTCOD.Text;
     ParamByName('CONFE').AsString := Conf;

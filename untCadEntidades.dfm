@@ -21,6 +21,7 @@ object frmCadEntidades: TfrmCadEntidades
     Width = 841
     Height = 31
     Align = alBottom
+    ParentBackground = False
     TabOrder = 0
     object DBNav: TDBNavigator
       Left = 9
@@ -67,14 +68,6 @@ object frmCadEntidades: TfrmCadEntidades
       Caption = 'Localizar'
       TabOrder = 4
     end
-    object btnRelatorios: TBitBtn
-      Left = 615
-      Top = 2
-      Width = 75
-      Height = 25
-      Caption = 'Relatorios'
-      TabOrder = 5
-    end
     object btnFechar: TBitBtn
       Left = 762
       Top = 2
@@ -82,15 +75,25 @@ object frmCadEntidades: TfrmCadEntidades
       Height = 25
       Action = actFechar
       Caption = 'Fechar'
+      TabOrder = 5
+    end
+    object btnRelatorios: TButton
+      Left = 615
+      Top = 2
+      Width = 75
+      Height = 25
+      Caption = 'Relat'#243'rios'
+      ImageIndex = 72
+      Images = ProgMov16
       TabOrder = 6
     end
   end
-  object PageControl1: TPageControl
+  object tabsFormulario: TPageControl
     Left = 0
     Top = 0
     Width = 841
     Height = 491
-    ActivePage = tabFisica
+    ActivePage = tabDados
     Align = alClient
     TabOrder = 1
     object tabDados: TTabSheet
@@ -101,6 +104,8 @@ object frmCadEntidades: TfrmCadEntidades
         Width = 833
         Height = 463
         Align = alClient
+        Color = clSilver
+        ParentColor = False
         TabOrder = 0
         object Label1: TLabel
           Left = 3
@@ -251,6 +256,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 19
           Width = 186
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'CODIGO'
           DataSource = dsEntidades
           TabOrder = 0
@@ -260,6 +266,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 19
           Width = 251
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'INSC_RG'
           DataSource = dsEntidades
           TabOrder = 1
@@ -309,6 +316,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 58
           Width = 654
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'RAZSOC'
           DataSource = dsEntidades
           TabOrder = 4
@@ -318,6 +326,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 98
           Width = 394
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'NOMEFAN'
           DataSource = dsEntidades
           TabOrder = 5
@@ -327,6 +336,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 136
           Width = 186
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'FONE'
           DataSource = dsEntidades
           TabOrder = 6
@@ -336,6 +346,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 136
           Width = 186
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'CELULAR'
           DataSource = dsEntidades
           TabOrder = 7
@@ -345,6 +356,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 136
           Width = 186
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'FAX'
           DataSource = dsEntidades
           TabOrder = 8
@@ -354,6 +366,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 174
           Width = 121
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'CORCEP'
           DataSource = dsEntidades
           TabOrder = 9
@@ -363,6 +376,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 213
           Width = 502
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'COREND'
           DataSource = dsEntidades
           TabOrder = 10
@@ -372,6 +386,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 213
           Width = 264
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'CORBAI'
           DataSource = dsEntidades
           TabOrder = 11
@@ -381,6 +396,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 252
           Width = 394
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'CORCID'
           DataSource = dsEntidades
           TabOrder = 12
@@ -390,6 +406,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 252
           Width = 30
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'CORUF'
           DataSource = dsEntidades
           TabOrder = 13
@@ -399,6 +416,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 295
           Width = 121
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'COBCEP'
           DataSource = dsEntidades
           TabOrder = 14
@@ -408,6 +426,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 338
           Width = 502
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'COBEND'
           DataSource = dsEntidades
           TabOrder = 15
@@ -417,6 +436,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 338
           Width = 264
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'COBBAI'
           DataSource = dsEntidades
           TabOrder = 16
@@ -426,6 +446,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 381
           Width = 394
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'COBCID'
           DataSource = dsEntidades
           TabOrder = 17
@@ -444,6 +465,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 424
           Width = 784
           Height = 21
+          CharCase = ecLowerCase
           DataField = 'EMAIL'
           DataSource = dsEntidades
           TabOrder = 19
@@ -451,18 +473,22 @@ object frmCadEntidades: TfrmCadEntidades
         object btnBuscaCEP: TButton
           Left = 128
           Top = 171
-          Width = 75
+          Width = 89
           Height = 25
           Caption = 'Buscar CEP'
+          ImageIndex = 73
+          Images = ProgMov16
           TabOrder = 20
           OnClick = btnBuscaCEPClick
         end
         object btnBuscaCEPCOB: TButton
           Left = 128
           Top = 292
-          Width = 75
+          Width = 89
           Height = 25
           Caption = 'Buscar CEP'
+          ImageIndex = 73
+          Images = ProgMov16
           TabOrder = 21
           OnClick = btnBuscaCEPCOBClick
         end
@@ -477,6 +503,8 @@ object frmCadEntidades: TfrmCadEntidades
         Width = 833
         Height = 463
         Align = alClient
+        Color = clSilver
+        ParentColor = False
         TabOrder = 0
         object Label19: TLabel
           Left = 8
@@ -595,6 +623,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 24
           Width = 394
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PROFISSAO'
           DataSource = dsEntidades
           TabOrder = 0
@@ -604,6 +633,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 24
           Width = 186
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'EMPR_FON'
           DataSource = dsEntidades
           TabOrder = 1
@@ -613,6 +643,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 65
           Width = 459
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'EMPRESA'
           DataSource = dsEntidades
           TabOrder = 2
@@ -622,6 +653,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 65
           Width = 329
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'SETOR'
           DataSource = dsEntidades
           TabOrder = 3
@@ -631,6 +663,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 106
           Width = 199
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'NACIONAL'
           DataSource = dsEntidades
           TabOrder = 4
@@ -675,6 +708,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 146
           Width = 459
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PAI'
           DataSource = dsEntidades
           TabOrder = 7
@@ -684,6 +718,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 186
           Width = 459
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'MAE'
           DataSource = dsEntidades
           TabOrder = 8
@@ -693,6 +728,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 233
           Width = 264
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'REGCAS'
           DataSource = dsEntidades
           TabOrder = 9
@@ -721,6 +757,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 272
           Width = 490
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'CONJUGE'
           DataSource = dsEntidades
           TabOrder = 11
@@ -730,6 +767,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 320
           Width = 137
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'CPFCJG'
           DataSource = dsEntidades
           TabOrder = 12
@@ -739,6 +777,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 320
           Width = 143
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'RGCJG'
           DataSource = dsEntidades
           TabOrder = 13
@@ -748,6 +787,7 @@ object frmCadEntidades: TfrmCadEntidades
           Top = 320
           Width = 394
           Height = 21
+          CharCase = ecUpperCase
           DataField = 'PROFCJG'
           DataSource = dsEntidades
           TabOrder = 14
@@ -767,88 +807,117 @@ object frmCadEntidades: TfrmCadEntidades
     object tabJuridica: TTabSheet
       Caption = 'Pessoa Jur'#237'dica'
       ImageIndex = 2
-      object Label33: TLabel
-        Left = 8
-        Top = 16
-        Width = 39
-        Height = 13
-        Caption = 'Contato'
-        FocusControl = DBEdit23
-      end
-      object DBEdit23: TDBEdit
-        Left = 8
-        Top = 32
-        Width = 281
-        Height = 21
-        DataField = 'CONTATO'
-        DataSource = dsEntidades
+      ExplicitLeft = 8
+      ExplicitTop = 22
+      object ScrollBox3: TScrollBox
+        Left = 0
+        Top = 0
+        Width = 833
+        Height = 463
+        Align = alClient
+        Color = clSilver
+        ParentColor = False
         TabOrder = 0
+        ExplicitLeft = 648
+        ExplicitWidth = 463
+        ExplicitHeight = 185
+        object Label33: TLabel
+          Left = 8
+          Top = 16
+          Width = 39
+          Height = 13
+          Caption = 'Contato'
+          FocusControl = DBEdit23
+        end
+        object DBEdit23: TDBEdit
+          Left = 8
+          Top = 32
+          Width = 281
+          Height = 21
+          CharCase = ecUpperCase
+          DataField = 'CONTATO'
+          DataSource = dsEntidades
+          TabOrder = 0
+        end
       end
     end
     object tabComplementares: TTabSheet
       Caption = 'Dados Complementares'
       ImageIndex = 3
-      object DBCheckBox1: TDBCheckBox
-        Left = 32
-        Top = 32
-        Width = 153
-        Height = 17
-        Caption = 'Consumidor Final'
-        DataField = 'CONSUM'
-        DataSource = dsEntidades
+      object ScrollBox4: TScrollBox
+        Left = 0
+        Top = 0
+        Width = 833
+        Height = 463
+        Align = alClient
+        Color = clSilver
+        ParentColor = False
         TabOrder = 0
-        ValueChecked = '1'
-        ValueUnchecked = '0'
-      end
-      object DBCheckBox2: TDBCheckBox
-        Left = 32
-        Top = 55
-        Width = 161
-        Height = 17
-        Caption = 'Contribuinte do ICMS'
-        DataField = 'CTR_ICMS'
-        DataSource = dsEntidades
-        DragCursor = crDefault
-        TabOrder = 1
-        ValueChecked = '1'
-        ValueUnchecked = '0'
-      end
-      object DBCheckBox3: TDBCheckBox
-        Left = 32
-        Top = 78
-        Width = 161
-        Height = 17
-        Caption = 'Aparecer nos Relat'#243'rios'
-        DataField = 'LISTA'
-        DataSource = dsEntidades
-        TabOrder = 2
-        ValueChecked = '1'
-        ValueUnchecked = '0'
-      end
-      object DBCheckBox4: TDBCheckBox
-        Left = 32
-        Top = 101
-        Width = 169
-        Height = 17
-        Caption = 'Bloqueado para Venda'
-        DataField = 'C_BLOC'
-        DataSource = dsEntidades
-        TabOrder = 3
-        ValueChecked = 'S'
-        ValueUnchecked = 'N'
+        ExplicitLeft = 648
+        ExplicitWidth = 463
+        ExplicitHeight = 185
+        object DBCheckBox1: TDBCheckBox
+          Left = 32
+          Top = 32
+          Width = 153
+          Height = 17
+          Caption = 'Consumidor Final'
+          DataField = 'CONSUM'
+          DataSource = dsEntidades
+          TabOrder = 0
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBCheckBox2: TDBCheckBox
+          Left = 32
+          Top = 55
+          Width = 161
+          Height = 17
+          Caption = 'Contribuinte do ICMS'
+          DataField = 'CTR_ICMS'
+          DataSource = dsEntidades
+          DragCursor = crDefault
+          TabOrder = 1
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBCheckBox3: TDBCheckBox
+          Left = 32
+          Top = 78
+          Width = 161
+          Height = 17
+          Caption = 'Aparecer nos Relat'#243'rios'
+          DataField = 'LISTA'
+          DataSource = dsEntidades
+          TabOrder = 2
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBCheckBox4: TDBCheckBox
+          Left = 32
+          Top = 101
+          Width = 169
+          Height = 17
+          Caption = 'Bloqueado para Venda'
+          DataField = 'C_BLOC'
+          DataSource = dsEntidades
+          TabOrder = 3
+          ValueChecked = 'S'
+          ValueUnchecked = 'N'
+        end
       end
     end
   end
   object dsEntidades: TDataSource
     AutoEdit = False
     DataSet = DataModule1.tbEntidades
-    Left = 552
-    Top = 400
+    Left = 696
+    Top = 280
   end
   object ActionList1: TActionList
     Images = ProgMov16
-    Left = 488
-    Top = 232
+    Left = 480
+    Top = 280
     object actIncluir: TAction
       Category = 'Controles'
       Caption = 'Inserir'
@@ -882,10 +951,10 @@ object frmCadEntidades: TfrmCadEntidades
   end
   object ProgMov16: TImageList
     BkColor = clWhite
-    Left = 552
-    Top = 225
+    Left = 544
+    Top = 281
     Bitmap = {
-      494C01015D006000540010001000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
+      494C01015D006000600010001000FFFFFF00FF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000008001000001002000000000000080
       010000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF

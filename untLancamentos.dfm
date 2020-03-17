@@ -314,7 +314,7 @@ object frmLancamentos: TfrmLancamentos
       Height = 21
       KeyField = 'COD'
       ListField = 'DESCR'
-      ListSource = dsContabil
+      ListSource = dsGrupo
       TabOrder = 6
       OnClick = edtGruDocClick
     end

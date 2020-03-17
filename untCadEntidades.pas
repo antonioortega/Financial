@@ -15,7 +15,7 @@ type
   TfrmCadEntidades = class(TForm)
     dsEntidades: TDataSource;
     pnlControles: TPanel;
-    PageControl1: TPageControl;
+    tabsFormulario: TPageControl;
     tabDados: TTabSheet;
     tabFisica: TTabSheet;
     tabJuridica: TTabSheet;
@@ -93,12 +93,6 @@ type
     DBEdit21: TDBEdit;
     Label32: TLabel;
     DBEdit22: TDBEdit;
-    Label33: TLabel;
-    DBEdit23: TDBEdit;
-    DBCheckBox1: TDBCheckBox;
-    DBCheckBox2: TDBCheckBox;
-    DBCheckBox3: TDBCheckBox;
-    DBCheckBox4: TDBCheckBox;
     ActionList1: TActionList;
     actIncluir: TAction;
     actAlterar: TAction;
@@ -109,9 +103,17 @@ type
     btnAlterar: TBitBtn;
     btnExcluir: TBitBtn;
     btnFiltrar: TBitBtn;
-    btnRelatorios: TBitBtn;
     btnFechar: TBitBtn;
     actFechar: TAction;
+    btnRelatorios: TButton;
+    ScrollBox3: TScrollBox;
+    DBEdit23: TDBEdit;
+    Label33: TLabel;
+    ScrollBox4: TScrollBox;
+    DBCheckBox1: TDBCheckBox;
+    DBCheckBox2: TDBCheckBox;
+    DBCheckBox3: TDBCheckBox;
+    DBCheckBox4: TDBCheckBox;
     procedure btnBuscaCEPClick(Sender: TObject);
     procedure btnBuscaCEPCOBClick(Sender: TObject);
     procedure actIncluirExecute(Sender: TObject);
@@ -133,7 +135,7 @@ var
 
 implementation
 
-uses untDados, untBuscaCep;
+uses untDados, untBuscaCep, untLocEntidades;
 
 {$R *.dfm}
 
@@ -184,7 +186,12 @@ end;
 
 procedure TfrmCadEntidades.actFiltrarExecute(Sender: TObject);
 begin
-  //
+  Application.CreateForm(TfrmLocalizaEntidades, frmLocalizaEntidades);
+  try
+    frmLocalizaEntidades.ShowModal;
+  finally
+    frmLocalizaEntidades.Close;
+  end;
 end;
 
 procedure TfrmCadEntidades.actIncluirExecute(Sender: TObject);

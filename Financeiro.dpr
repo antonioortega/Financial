@@ -28,7 +28,8 @@ uses
   untRelCentroCustoAnual in 'untRelCentroCustoAnual.pas' {frmCentroCustoAnual},
   untCadContas in 'untCadContas.pas' {frmCadConta},
   untRelSaldoBan in 'untRelSaldoBan.pas' {frmSaldoBancos},
-  untCadEntidades in 'untCadEntidades.pas' {frmCadEntidades};
+  untCadEntidades in 'untCadEntidades.pas' {frmCadEntidades},
+  untLocEntidades in 'untLocEntidades.pas' {frmLocalizaEntidades};
 
 {$R *.res}
 
